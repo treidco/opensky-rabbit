@@ -16,23 +16,23 @@ func receive() {
 	defer ch.Close()
 
 	q, err := ch.QueueDeclare(
-		"flight", // name
-		false,    // durable
-		false,    // delete when unused
-		false,    // exclusive
-		false,    // no-wait
-		nil,      // arguments
+		"flight",
+		false,
+		false,
+		false,
+		false,
+		nil,
 	)
 	failOnError(err, "Failed to declare a queue")
 
 	msgs, err := ch.Consume(
-		q.Name, // queue
-		"",     // consumer
-		true,   // auto-ack
-		false,  // exclusive
-		false,  // no-local
-		false,  // no-wait
-		nil,    // args
+		q.Name,
+		"",
+		true,
+		false,
+		false,
+		false,
+		nil,
 	)
 	failOnError(err, "Failed to register a consumer")
 

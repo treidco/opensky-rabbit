@@ -28,7 +28,6 @@ func invalidArgs() {
 func producer() {
 	flights := getData()
 
-	// Interrogate the data
 	for _, flight := range flights {
 		log.Printf("[x] Sent data for flight %s", flight.Callsign)
 		message := fmt.Sprintf("Flight %s from %s to %s", flight.Callsign, flight.Departure, flight.Arrival)
